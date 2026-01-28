@@ -104,13 +104,14 @@
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 20px;
+            margin-bottom: 40px;
         }
 
         .project-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(123, 47, 247, 0.3);
             border-radius: 12px;
             padding: 25px;
             cursor: pointer;
@@ -126,7 +127,7 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            background: linear-gradient(90deg, transparent, rgba(123, 47, 247, 0.1), transparent);
             transition: left 0.5s ease;
         }
 
@@ -136,34 +137,34 @@
 
         .project-card:hover {
             background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(123, 47, 247, 0.5);
-            transform: translateY(-10px);
+            border-color: rgba(123, 47, 247, 0.6);
+            transform: translateY(-8px);
             box-shadow: 0 20px 40px rgba(123, 47, 247, 0.2);
         }
 
         .project-name {
             font-size: 1.3em;
-            font-weight: 600;
-            margin-bottom: 12px;
+            font-weight: 700;
+            margin-bottom: 8px;
             color: #00d4ff;
         }
 
         .project-time {
-            font-size: 0.85em;
+            font-size: 0.9em;
             color: #a0a0a0;
             margin-bottom: 10px;
         }
 
         .project-revenue {
-            font-size: 1em;
+            font-size: 0.95em;
             color: #7b2ff7;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .project-description {
-            font-size: 0.9em;
-            color: #c0c0c0;
+            font-size: 0.95em;
+            color: #d0d0d0;
             line-height: 1.6;
             margin-bottom: 15px;
         }
@@ -172,10 +173,10 @@
             display: inline-block;
             background: rgba(123, 47, 247, 0.3);
             color: #00d4ff;
-            padding: 5px 12px;
+            padding: 4px 12px;
             border-radius: 20px;
             font-size: 0.8em;
-            margin-top: 10px;
+            font-weight: 600;
         }
 
         .modal {
@@ -192,22 +193,35 @@
         }
 
         .modal-content {
-            background: linear-gradient(135deg, #0f0c29, #302b63);
+            background: linear-gradient(135deg, rgba(15, 12, 41, 0.95), rgba(48, 43, 99, 0.95));
             margin: 5% auto;
             padding: 40px;
             border: 1px solid rgba(123, 47, 247, 0.3);
             border-radius: 12px;
             width: 90%;
-            max-width: 700px;
+            max-width: 800px;
             max-height: 80vh;
             overflow-y: auto;
             animation: slideIn 0.3s ease;
         }
 
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: rgba(123, 47, 247, 0.5);
+            border-radius: 4px;
+        }
+
         .close {
             color: #a0a0a0;
             float: right;
-            font-size: 2em;
+            font-size: 28px;
             font-weight: bold;
             cursor: pointer;
             transition: color 0.3s ease;
@@ -219,9 +233,9 @@
 
         .modal-title {
             font-size: 2em;
-            color: #00d4ff;
+            font-weight: 700;
             margin-bottom: 20px;
-            margin-top: 10px;
+            color: #00d4ff;
         }
 
         .modal-section {
@@ -229,100 +243,43 @@
         }
 
         .modal-section-title {
-            font-size: 1.1em;
+            font-size: 1.2em;
+            font-weight: 700;
             color: #7b2ff7;
-            font-weight: 600;
             margin-bottom: 10px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(123, 47, 247, 0.3);
         }
 
         .modal-section-content {
-            color: #c0c0c0;
+            color: #d0d0d0;
             line-height: 1.8;
-            font-size: 0.95em;
+            white-space: pre-wrap;
+            word-wrap: break-word;
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         @keyframes slideIn {
             from {
-                transform: translateY(-50px);
                 opacity: 0;
+                transform: translateY(-50px);
             }
             to {
-                transform: translateY(0);
                 opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        .abilities {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 40px;
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #707070;
+            border-top: 1px solid rgba(123, 47, 247, 0.2);
             margin-top: 60px;
-        }
-
-        .abilities-title {
-            font-size: 2em;
-            color: #00d4ff;
-            margin-bottom: 30px;
-            font-weight: 700;
-        }
-
-        .abilities-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-
-        .ability-item {
-            background: rgba(123, 47, 247, 0.1);
-            border-left: 3px solid #7b2ff7;
-            padding: 20px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .ability-item:hover {
-            background: rgba(123, 47, 247, 0.2);
-            transform: translateX(5px);
-        }
-
-        .ability-name {
-            font-size: 1.1em;
-            color: #00d4ff;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .ability-description {
-            font-size: 0.9em;
-            color: #b0b0b0;
-            line-height: 1.6;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .modal-content {
-                width: 95%;
-                margin: 20% auto;
-                padding: 25px;
-            }
         }
     </style>
 </head>
@@ -330,139 +287,140 @@
     <div class="container">
         <header>
             <h1>🚀 Web3 项目经历</h1>
-            <p class="subtitle">Hunter Wang | 8年深度参与 | 27个核心项目 | 10万美元+获利</p>
+            <p class="subtitle">Hunter Wang | 2017-2025 | 8年深度参与经验</p>
+            
             <div class="stats">
                 <div class="stat-card">
-                    <div class="stat-number">8年</div>
-                    <div class="stat-label">深度参与</div>
+                    <div class="stat-number">27</div>
+                    <div class="stat-label">项目经历</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">27个</div>
-                    <div class="stat-label">核心项目</div>
+                    <div class="stat-number">8</div>
+                    <div class="stat-label">年份跨度</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">10万+</div>
-                    <div class="stat-label">美元获利</div>
+                    <div class="stat-label">套利收益</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">3万人</div>
-                    <div class="stat-label">社区管理</div>
+                    <div class="stat-number">2万+</div>
+                    <div class="stat-label">批量操作规模</div>
                 </div>
             </div>
         </header>
 
         <div class="periods">
-            <!-- 启蒙期 -->
+            <!-- 启蒙期 2017-2018 -->
             <div class="period">
                 <h2 class="period-title">📚 启蒙期 (2017-2018)</h2>
                 <div class="projects-grid">
                     <div class="project-card" onclick="openModal('project1')">
                         <div class="project-name">玩客云挖矿与交易所套利</div>
                         <div class="project-time">2017年12月</div>
-                        <div class="project-revenue">收益: 2000元 → 4000元</div>
-                        <div class="project-description">首次接触区块链，见证100倍涨幅。启蒙期的重要里程碑。</div>
+                        <div class="project-revenue">收益: 2000元利润</div>
+                        <div class="project-description">首次接触区块链，通过玩客币套利赚取2000元利润。见证100倍涨幅。</div>
                         <span class="project-tag">启蒙期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project2')">
-                        <div class="project-name">跨交易所搬砖套利</div>
+                        <div class="project-name">跨交易所搬砖套利 (LIT/DBC)</div>
                         <div class="project-time">2018年1月</div>
-                        <div class="project-revenue">收益: 单次2%-5%差价</div>
-                        <div class="project-description">建立资金池进行循环搬砖。积累期的关键经验。</div>
+                        <div class="project-revenue">收益: 2%-5%差价</div>
+                        <div class="project-description">龙网与Gate、火币与Gate之间的稳定价差套利。日均可完成多次循环。</div>
                         <span class="project-tag">启蒙期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project3')">
                         <div class="project-name">合约交易入门与心态管理</div>
                         <div class="project-time">2018年2月</div>
-                        <div class="project-revenue">收益: 经历完整心理周期</div>
-                        <div class="project-description">深刻理解仓位管理和情绪控制。打下扎实的交易基础。</div>
+                        <div class="project-revenue">收益: 心理周期学习</div>
+                        <div class="project-description">加入朱荣交易大群，首次经历「盈利-自负-亏损-心态崩溃」的完整周期。</div>
                         <span class="project-tag">启蒙期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project4')">
                         <div class="project-name">火币与Gate OCN代币搬砖</div>
                         <div class="project-time">2018年3月</div>
-                        <div class="project-revenue">收益: 单次5%-8%差价</div>
-                        <div class="project-description">多交易所套利实践。建立系统化的搬砖流程。</div>
+                        <div class="project-revenue">收益: 2%-5%差价</div>
+                        <div class="project-description">建立双平台资金池，精确计算实际收益。持续操作约半个月。</div>
                         <span class="project-tag">启蒙期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project5')">
                         <div class="project-name">付费跟单社群实践</div>
-                        <div class="project-time">2018年4月-6月</div>
-                        <div class="project-revenue">收益: 社群运营经验积累</div>
-                        <div class="project-description">参与付费跟单社群。学习社区运营和用户激励机制。</div>
+                        <div class="project-time">2018年4月-5月</div>
+                        <div class="project-revenue">收益: 认知升级</div>
+                        <div class="project-description">加入比特币昊天付费跟单群。深刻理解KOL经济本质和交易心理。</div>
                         <span class="project-tag">启蒙期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project6')">
                         <div class="project-name">成都枪手团队跟单</div>
-                        <div class="project-time">2018年7月-9月</div>
-                        <div class="project-revenue">收益: 交易技能提升</div>
-                        <div class="project-description">加入专业交易团队。学习专业交易策略和风险管理。</div>
+                        <div class="project-time">2018年6月</div>
+                        <div class="project-revenue">收益: 风险认知</div>
+                        <div class="project-description">见证高胜率团队因风险管理失误而崩盘。理解风险比胜率更重要。</div>
                         <span class="project-tag">启蒙期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project7')">
                         <div class="project-name">EOS场外OTC交易</div>
-                        <div class="project-time">2018年10月</div>
-                        <div class="project-revenue">收益: 场外交易经验</div>
-                        <div class="project-description">参与EOS主网上线期间的场外交易。理解大额交易流程。</div>
+                        <div class="project-time">2018年7月-8月</div>
+                        <div class="project-revenue">收益: 1%价差</div>
+                        <div class="project-description">提供EOS快速场外兑换服务。通过OKEx接单，5分钟一单的高频交易。</div>
                         <span class="project-tag">启蒙期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project8')">
                         <div class="project-name">火山视频挖矿项目</div>
-                        <div class="project-time">2018年11月</div>
-                        <div class="project-revenue">收益: 1000元</div>
-                        <div class="project-description">参与火山视频代币挖矿。体验新兴项目的机会。</div>
+                        <div class="project-time">2018年9月</div>
+                        <div class="project-revenue">收益: 模型分析</div>
+                        <div class="project-description">早期X to Earn模式探索。理解代币分发博弈艺术和项目生命周期。</div>
                         <span class="project-tag">启蒙期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project9')">
                         <div class="project-name">交易技术系统学习</div>
-                        <div class="project-time">2018年12月</div>
-                        <div class="project-revenue">收益: 知识体系建立</div>
-                        <div class="project-description">系统学习技术分析、K线理论、交易心理学。为后续交易奠定基础。</div>
+                        <div class="project-time">2018年10月</div>
+                        <div class="project-revenue">收益: 技术积累</div>
+                        <div class="project-description">加入科科训练营系统学习交易技术。K线形态、技术指标、仓位管理。</div>
                         <span class="project-tag">启蒙期</span>
                     </div>
                 </div>
             </div>
 
-            <!-- 积累期 -->
+            <!-- 积累期 2019-2022 -->
             <div class="period">
                 <h2 class="period-title">💎 积累期 (2019-2022)</h2>
                 <div class="projects-grid">
                     <div class="project-card" onclick="openModal('project10')">
                         <div class="project-name">DAGT话费交易竞赛</div>
-                        <div class="project-time">2019年2月</div>
-                        <div class="project-revenue">收益: 5000元</div>
-                        <div class="project-description">参与交易竞赛。在竞争环境中验证交易能力。</div>
+                        <div class="project-time">2019年1月</div>
+                        <div class="project-revenue">收益: 二等奖</div>
+                        <div class="project-description">研究活动规则，对接话费代充平台。通过低滑点刷量获得二等奖并安全变现。</div>
                         <span class="project-tag">积累期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project11')">
                         <div class="project-name">币世界CNNS营销空投</div>
-                        <div class="project-time">2019年5月</div>
-                        <div class="project-revenue">收益: 8000元</div>
-                        <div class="project-description">参与营销空投活动。理解项目营销和社区运营策略。</div>
+                        <div class="project-time">2019年4月</div>
+                        <div class="project-revenue">收益: 1万元</div>
+                        <div class="project-description">组建校园团队，标准化注册流程。三天时间实现1万元利润。</div>
                         <span class="project-tag">积累期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project12')">
                         <div class="project-name">CC Global交易所BTH预售活动</div>
                         <div class="project-time">2019年8月-2020年3月</div>
-                        <div class="project-revenue">收益: 深度参与与分析</div>
-                        <div class="project-description">深度参与CC Global交易所的BTH预售活动。详细分析私域运营、活动机制、营销策略、产品承接能力。</div>
+                        <div class="project-revenue">收益: 5000美元</div>
+                        <div class="project-description">识别确定性套利机会，9个账号参与三个月。深度分析交易所运营模式。</div>
                         <span class="project-tag">积累期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project13')">
                         <div class="project-name">欧易OTC商家</div>
-                        <div class="project-time">2020年1月-12月</div>
+                        <div class="project-time">2020年1月-2022年3月</div>
                         <div class="project-revenue">收益: 日均500-1000元</div>
-                        <div class="project-description">成为欧易OTC商家。建立稳定的法币交易渠道。</div>
+                        <div class="project-description">认证OTC商家，建立风控体系。两年零风险事件安全退出。</div>
                         <span class="project-tag">积累期</span>
                     </div>
 
@@ -470,15 +428,15 @@
                         <div class="project-name">Kucoin与抹茶MIR搬砖套利</div>
                         <div class="project-time">2021年2月-3月</div>
                         <div class="project-revenue">收益: 3万美元</div>
-                        <div class="project-description">杠杆对冲循环提升资金效率。高级期的代表作。</div>
+                        <div class="project-description">杠杆对冲循环提升资金效率。5%价差空间，高级期的代表作。</div>
                         <span class="project-tag">积累期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project15')">
                         <div class="project-name">MEXC与Uniswap GTC搬砖</div>
-                        <div class="project-time">2021年4月</div>
-                        <div class="project-revenue">收益: 2万美元</div>
-                        <div class="project-description">跨DEX和CEX的套利。理解不同交易所的流动性差异。</div>
+                        <div class="project-time">2021年5月</div>
+                        <div class="project-revenue">收益: 5000美元</div>
+                        <div class="project-description">CEX与DEX之间的套利。验证跨交易所套利的可行性。</div>
                         <span class="project-tag">积累期</span>
                     </div>
 
@@ -486,14 +444,14 @@
                         <div class="project-name">AVAX链上与Kucoin QI搬砖</div>
                         <div class="project-time">2021年9月</div>
                         <div class="project-revenue">收益: 3万美元</div>
-                        <div class="project-description">多维度价格监控，工具开发。规模化操作的成功案例。</div>
+                        <div class="project-description">多维度价格监控，开发工具。规模化操作的成功案例。</div>
                         <span class="project-tag">积累期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project17')">
                         <div class="project-name">Kucoin与TP钱包Xswap BLOK搬砖</div>
                         <div class="project-time">2021年10月</div>
-                        <div class="project-revenue">收益: 1.5万美元</div>
+                        <div class="project-revenue">收益: 2000美元</div>
                         <div class="project-description">钱包内DEX与交易所的套利。体验DeFi生态的机会。</div>
                         <span class="project-tag">积累期</span>
                     </div>
@@ -501,54 +459,54 @@
                     <div class="project-card" onclick="openModal('project18')">
                         <div class="project-name">Terra链DEX与OKX Luna崩盘套利</div>
                         <div class="project-time">2022年5月</div>
-                        <div class="project-revenue">收益: 2万美元</div>
-                        <div class="project-description">在极端行情中捕捉套利机会。理解风险管理的重要性。</div>
+                        <div class="project-revenue">收益: 1万美元</div>
+                        <div class="project-description">黑天鹅事件套利，百倍价差。极端行情中的快速反应能力。</div>
                         <span class="project-tag">积累期</span>
                     </div>
                 </div>
             </div>
 
-            <!-- All In Web3拥抱期 -->
+            <!-- All In Web3拥抱期 2024-2025 -->
             <div class="period">
-                <h2 class="period-title">🌟 All In Web3拥抱期 (2024-2025)</h2>
+                <h2 class="period-title">🔥 All In Web3拥抱期 (2024-2025)</h2>
                 <div class="projects-grid">
                     <div class="project-card" onclick="openModal('project19')">
                         <div class="project-name">HODL项目Mod</div>
                         <div class="project-time">2024年4月-10月</div>
-                        <div class="project-revenue">收益: 经验积累 + 项目全生命周期参与</div>
-                        <div class="project-description">管理3万人Discord社区。策划多种用户激励活动。体验项目从启动到爆发的全过程。</div>
+                        <div class="project-revenue">收益: 社区运营</div>
+                        <div class="project-description">管理3万人Discord社区。完整经历项目生命周期，深度理解Meme项目运营。</div>
                         <span class="project-tag">拥抱期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project20')">
                         <div class="project-name">OKX钱包Soon交易竞赛</div>
                         <div class="project-time">2025年5月</div>
-                        <div class="project-revenue">收益: 5000美元</div>
-                        <div class="project-description">参与OKX钱包Soon代币交易竞赛。在新生态中快速适应和获利。</div>
+                        <div class="project-revenue">收益: 1万美元</div>
+                        <div class="project-description">批量创建2万个钱包地址。验证大规模批量操作的可行性。</div>
                         <span class="project-tag">拥抱期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project21')">
                         <div class="project-name">代币创建与流动性实践</div>
-                        <div class="project-time">2024年6月-8月</div>
-                        <div class="project-revenue">收益: 技能积累</div>
-                        <div class="project-description">创建和管理自己的代币。理解代币经济学和流动性池的运作机制。</div>
+                        <div class="project-time">2025年6月</div>
+                        <div class="project-revenue">收益: 技术积累</div>
+                        <div class="project-description">在BSC和SOL部署代币。掌握DeFi底层机制和LP策略。</div>
                         <span class="project-tag">拥抱期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project22')">
                         <div class="project-name">Rhea交易竞赛</div>
-                        <div class="project-time">2025年6月</div>
-                        <div class="project-revenue">收益: 3000美元</div>
-                        <div class="project-description">参与Rhea平台交易竞赛。在新平台中验证交易能力。</div>
+                        <div class="project-time">2025年7月</div>
+                        <div class="project-revenue">收益: 1000美元</div>
+                        <div class="project-description">Near网络交易竞赛。钱包隔离方案规避风控。</div>
                         <span class="project-tag">拥抱期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project23')">
                         <div class="project-name">Pancake交易竞赛</div>
                         <div class="project-time">2025年7月</div>
-                        <div class="project-revenue">收益: 2000美元</div>
-                        <div class="project-description">参与Pancake交易竞赛。在DEX生态中的交易实践。</div>
+                        <div class="project-revenue">收益: 1000美元</div>
+                        <div class="project-description">45个账户参与。磨损成本精算，风控规避策略。</div>
                         <span class="project-tag">拥抱期</span>
                     </div>
 
@@ -556,15 +514,15 @@
                         <div class="project-name">River NFT空投</div>
                         <div class="project-time">2025年8月</div>
                         <div class="project-revenue">收益: 5000美元</div>
-                        <div class="project-description">River是一个多链部署的稳定币项目，通过在不同链上质押btc等稳定资产铸造稳定币来获得NFT并空投积分，积分后续可兑换代币。5条链部署，400个钱包地址。多链操作能力展现。</div>
+                        <div class="project-description">5条链上批量铸造400个NFT。多链批量操作与经济模型分析。</div>
                         <span class="project-tag">拥抱期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project25')">
                         <div class="project-name">XLayer Meme热潮 & Okay交易平台打新</div>
-                        <div class="project-time">2025年8月-9月</div>
-                        <div class="project-revenue">收益: 8000美元</div>
-                        <div class="project-description">参与XLayer Meme热潮。在Okay交易平台参与打新。爆发期的开始。</div>
+                        <div class="project-time">2025年8月</div>
+                        <div class="project-revenue">收益: 2000美元</div>
+                        <div class="project-description">机会捕捉能力。MoreLogin指纹浏览器多账号管理。</div>
                         <span class="project-tag">拥抱期</span>
                     </div>
 
@@ -572,50 +530,24 @@
                         <div class="project-name">OKX Boost xlaunch</div>
                         <div class="project-time">2025年10月</div>
                         <div class="project-revenue">收益: 5000美元</div>
-                        <div class="project-description">40%返佣谈判成功。复杂规则拆解与执行。</div>
+                        <div class="project-description">40-60个钱包参与。活动规则逆向分析，成本优化40%。</div>
                         <span class="project-tag">拥抱期</span>
                     </div>
 
                     <div class="project-card" onclick="openModal('project27')">
                         <div class="project-name">Binance Alpha项目研究</div>
-                        <div class="project-time">2025年11月</div>
-                        <div class="project-revenue">收益: 知识积累</div>
-                        <div class="project-description">深度研究Binance Alpha项目。理解主流交易所的项目选择标准。</div>
+                        <div class="project-time">2025年持续进行</div>
+                        <div class="project-revenue">收益: 持续积累</div>
+                        <div class="project-description">系统跟踪30+项目。建立完整的Alpha项目分析框架。</div>
                         <span class="project-tag">拥抱期</span>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="abilities">
-            <h2 class="abilities-title">💡 核心能力总结</h2>
-            <div class="abilities-grid">
-                <div class="ability-item">
-                    <div class="ability-name">🔄 套利能力</div>
-                    <div class="ability-description">跨交易所搬砖、杠杆对冲、多链操作。通过系统化的价格监控和风险管理实现稳定收益。</div>
-                </div>
-                <div class="ability-item">
-                    <div class="ability-name">🔍 机制分析</div>
-                    <div class="ability-description">深度分析项目机制、商业模式、用户转化率。能够快速识别项目的致命隐患。</div>
-                </div>
-                <div class="ability-item">
-                    <div class="ability-name">📊 批量运营</div>
-                    <div class="ability-description">管理数百个钱包地址、多链部署、大规模空投操作。具备系统化的运营能力。</div>
-                </div>
-                <div class="ability-item">
-                    <div class="ability-name">👥 社区运营</div>
-                    <div class="ability-description">管理3万人社区、策划用户激励、设计参与机制。理解社区增长和用户留存。</div>
-                </div>
-                <div class="ability-item">
-                    <div class="ability-name">⚠️ 风控意识</div>
-                    <div class="ability-description">仓位管理、情绪控制、风险识别。在极端行情中保持理性和执行力。</div>
-                </div>
-                <div class="ability-item">
-                    <div class="ability-name">📈 周期认知</div>
-                    <div class="ability-description">理解市场周期、项目生命周期、行业发展阶段。能够在不同阶段采取相应策略。</div>
-                </div>
-            </div>
-        </div>
+        <footer>
+            <p>© 2025 Hunter Wang | Web3 Portfolio | 8年深度参与经验</p>
+        </footer>
     </div>
 
     <!-- 模态框 -->
@@ -623,7 +555,7 @@
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
             <h2 class="modal-title" id="modalTitle"></h2>
-            <div id="modalBody"></div>
+            <div id="modalContent"></div>
         </div>
     </div>
 
@@ -632,266 +564,277 @@
             project1: {
                 title: "玩客云挖矿与交易所套利",
                 sections: {
-                    "项目背景": "2017年12月，区块链刚刚进入大众视野。玩客云是迅雷推出的区块链项目，通过挖矿获得玩客币。同时，不同交易所之间的价格差异巨大。",
-                    "参与方式": "购买玩客云硬件进行挖矿，同时在不同交易所之间进行套利交易。",
-                    "核心收获": "2000元投入最终获得4000元收益（100%收益率）。见证了区块链项目从0到100倍涨幅的过程。",
-                    "能力积累": "首次接触区块链技术和交易所操作。理解了套利的基本原理。建立了对加密货币市场的初步认识。"
+                    "项目背景": "迅雷推出玩客云硬件挖矿项目，用户通过共享带宽和存储资源获得玩客币（WKC）奖励，这是国内最早的大规模区块链挖矿项目之一。",
+                    "参与方式": "购买玩客云硬件设备参与挖矿，同时在玩客家交易所进行代币交易。通过观察市场发现机器人报价存在价格失灵漏洞，在0.8元挂买单、1.2元挂卖单，利用价差进行套利。",
+                    "核心收获": "见证玩客币从0.1元涨至10元的100倍涨幅；用2000元本金通过4次套利赚取2000元利润；首次接触区块链和加密货币市场，建立对价格波动和交易机制的初步认知。",
+                    "能力积累": "价格敏感度培养、交易所基础操作、套利思维启蒙。"
                 }
             },
             project2: {
-                title: "跨交易所搬砖套利",
+                title: "跨交易所搬砖套利 (LIT/DBC)",
                 sections: {
-                    "项目背景": "2018年初，各大交易所的价格差异仍然很大。通过在火币、币安、OKEx等交易所之间倒卖代币可以获得稳定收益。",
-                    "参与方式": "建立资金池，在多个交易所之间进行循环搬砖。每天进行多次交易。",
-                    "核心收获": "单次套利收益2%-5%，日均进行多次循环，月收益可达30%-50%。",
-                    "能力积累": "学会了系统化的套利流程。理解了交易所的流动性和价格机制。建立了资金管理的基本概念。"
+                    "项目背景": "2018年初牛市期间，不同交易所之间存在明显价差，主要原因是做市商机制不成熟、用户分布不均、充提币速度差异等。",
+                    "参与方式": "通过非小号等行情平台监控同一币种在不同交易所的实时价格，发现龙网与Gate之间快播流量币（LIT）存在稳定价差。火币和gate之间深脑链（DBC）存在稳定价差。注册Gate、火币、币安等多家交易所账户，建立资金池进行循环搬砖。",
+                    "核心收获": "单次套利差价2%-5%，市场深度约2-5万人民币，日均可完成多次循环。",
+                    "能力积累": "多交易所账户管理、实时价格监控、资金池建立、循环套利执行。"
                 }
             },
             project3: {
                 title: "合约交易入门与心态管理",
                 sections: {
-                    "项目背景": "2018年2月，合约交易成为新的赚钱方式。但同时也带来了巨大的风险。",
-                    "参与方式": "在OKEx等交易所进行合约交易。经历了从盈利到亏损再到盈利的完整心理周期。",
-                    "核心收获": "深刻理解了仓位管理和情绪控制的重要性。学会了如何在波动中保持理性。",
-                    "能力积累": "建立了对交易心理学的认识。学会了风险管理的基本方法。为后续的交易奠定了心理基础。"
+                    "项目背景": "加入朱荣交易大群，当时群内有小侠、纯真等知名交易员分享策略，朱荣的判断准确率极高，甚至能影响市场行情。",
+                    "参与方式": "从小资金开始学习合约交易，初期跟随群内策略获得盈利；随着收益增加逐步加大仓位，进入过度自信阶段；遭遇亏损后心态失衡，产生错误判断和决策。",
+                    "核心收获": "首次完整经历「盈利-自负-亏损-心态崩溃」的交易心理周期，深刻理解仓位管理和情绪控制在交易中的核心地位。",
+                    "能力积累": "心态管理、仓位控制、风险意识、交易心理学。"
                 }
             },
             project4: {
                 title: "火币与Gate OCN代币搬砖",
                 sections: {
-                    "项目背景": "2018年3月，OCN代币在不同交易所的价格差异高达5%-8%。",
-                    "参与方式": "在火币和Gate交易所之间进行OCN代币的搬砖套利。",
-                    "核心收获": "单次套利收益5%-8%。累计获利5000元。",
-                    "能力积累": "学会了多交易所套利的实践操作。理解了代币转账和交易的流程。"
+                    "项目背景": "OCN（Odyssey）是当时的热门项目，在不同交易所流动性差异导致持续存在套利空间。",
+                    "参与方式": "建立火币和Gate双平台资金池，实时监控价差，当差价超过2%时执行搬砖操作。通过Excel记录每笔交易的买入价、卖出价、手续费、提币费用，精确计算实际收益。",
+                    "核心收获": "差价稳定在2%-5%，市场深度2-5万人民币，持续操作约半个月。",
+                    "能力积累": "数据记录与分析、成本精算、双平台协同操作。"
                 }
             },
             project5: {
                 title: "付费跟单社群实践",
                 sections: {
-                    "项目背景": "2018年4月，付费跟单社群开始流行。许多交易高手开设社群，收取会员费。",
-                    "参与方式": "加入付费跟单社群，学习专业交易者的交易策略和方法。",
-                    "核心收获": "学习了社群运营的基本模式。理解了用户激励和社区管理的重要性。",
-                    "能力积累": "对社区运营有了初步认识。学会了如何从专业交易者那里学习。"
+                    "项目背景": "加入比特币昊天付费跟单群（群费约600元），该博主通过在朱荣微博评论获得关注，整合多个付费群信息进行二次包装后带单。",
+                    "参与方式": "支付群费加入付费跟单社群，跟随KOL的交易信号进行合约交易。",
+                    "核心收获": "发现跟单模式的本质问题：(1)KOL的胜率可能很高，但散户因无法同步止盈止损而难以复制收益；(2)跟单本质是心理按摩，满足散户不劳而获的心理需求；(3)散户总想一单暴富，仓位管理失控是亏损根源。",
+                    "能力积累": "KOL经济分析、商业本质认知、交易能力自我修养意识。"
                 }
             },
             project6: {
                 title: "成都枪手团队跟单",
                 sections: {
-                    "项目背景": "2018年7月，成都有一个专业的交易团队，以高胜率的交易策略著称。",
-                    "参与方式": "加入团队进行跟单交易。学习团队的交易策略和风险管理方法。",
-                    "核心收获": "学到了专业交易团队的运作模式。理解了团队合作和风险分散的重要性。",
-                    "能力积累": "建立了对专业交易的认识。学会了如何在团队中工作。"
+                    "项目背景": "成都枪手比特币团队采用免费跟单+赚返佣的模式，胜率较高，持续运营约3个月。",
+                    "参与方式": "跟随团队进行合约交易，见证其从高胜率盈利到因一次重大判断失误而崩盘的全过程。",
+                    "核心收获": "团队在盈利较多时过于享受，忽视风险管理，最终在一次大行情中方向判断错误导致结束。任何交易策略都有失效的时候，风险管理比胜率更重要；即使连续盈利也不能放松警惕。",
+                    "能力积累": "风险管理意识、团队运营观察、市场规律认知。"
                 }
             },
             project7: {
                 title: "EOS场外OTC交易",
                 sections: {
-                    "项目背景": "2018年10月，EOS主网上线。大量投资者需要通过场外交易获得EOS。",
-                    "参与方式": "参与EOS的场外OTC交易。处理大额交易和法币兑换。",
-                    "核心收获": "理解了场外交易的流程和风险。学会了如何处理大额交易。",
-                    "能力积累": "对法币交易有了实践经验。理解了交易对手风险的重要性。"
+                    "项目背景": "EOS是当时最热门的合约交易标的之一，波动剧烈，大量用户需要快速获得EOS进行合约开仓，场外交易需求旺盛。",
+                    "参与方式": "提供EOS的快速场外兑换服务，满足合约交易者争分夺秒入场的需求。通过okex接单，在交易所现货市场买入usdt兑换为eos后在挂单区出售给客户。",
+                    "核心收获": "赚取买卖价差（约1%）和市场波动中的短期套利机会，交易频率高时可达5分钟一单。",
+                    "能力积累": "OTC交易操作、客户服务、高频交易执行。"
                 }
             },
             project8: {
                 title: "火山视频挖矿项目",
                 sections: {
-                    "项目背景": "2018年11月，火山视频推出了代币挖矿项目。用户可以通过观看视频获得代币。",
-                    "参与方式": "参与火山视频的代币挖矿。获得代币后在交易所出售。",
-                    "核心收获": "获利1000元。体验了新兴项目的机会。",
-                    "能力积累": "学会了如何快速识别和参与新项目。理解了代币经济学的基本原理。"
+                    "项目背景": "火山视频推出代币激励计划，本质是用发币方式绑定用户、将平台收益分配给社区，是早期X to Earn模式的探索。",
+                    "参与方式": "参与火山视频的挖矿和代币激励活动。",
+                    "核心收获": "(1)代币分发是一场博弈艺术，做好可以让项目从1到100，做差则从10跌回0；(2)项目死亡的根本原因是早期用户拿走大部分收益并离场，后期用户成为接盘侠；(3)对早期用户的预期管理和空投分发策略至关重要。",
+                    "能力积累": "代币经济模型分析能力、项目生命周期判断能力。"
                 }
             },
             project9: {
                 title: "交易技术系统学习",
                 sections: {
-                    "项目背景": "2018年12月，经过一年的实战，需要系统地学习交易理论。",
-                    "参与方式": "系统学习技术分析、K线理论、交易心理学等基础知识。",
-                    "核心收获": "建立了完整的交易知识体系。为后续的交易奠定了理论基础。",
-                    "能力积累": "从实战中上升到理论。建立了对交易的系统认识。"
+                    "项目背景": "合约亏损后，加入KOL科科的训练营系统学习交易技术。",
+                    "参与方式": "参加科科训练营，系统学习K线形态、技术指标、仓位管理等。同时尝试做行情分析IP。",
+                    "核心收获": "掌握了交易技术的系统知识框架。",
+                    "能力积累": "技术分析、K线形态识别、技术指标应用、交易系统建立。"
                 }
             },
             project10: {
                 title: "DAGT话费交易竞赛",
                 sections: {
-                    "项目背景": "2019年2月，DAGT交易所举办了交易竞赛。参赛者可以获得奖励。",
-                    "参与方式": "参与交易竞赛。在竞争环境中进行交易。",
-                    "核心收获": "获利5000元。在竞争中验证了交易能力。",
-                    "能力积累": "学会了在压力下保持冷静。理解了竞争的价值。"
+                    "项目背景": "DAGT代币举办话费交易竞赛活动，用户通过代币充值话费的交易量排名获得对应奖励，这是早期项目方常用的用户激励方式。",
+                    "参与方式": "(1)研究活动规则，计算达到各奖励档位所需的交易量和对应成本；(2)对接国内话费代充平台，确认话费奖励的变现渠道和折损率；(3)通过低滑点交易方式刷量，精确控制磨损成本。",
+                    "核心收获": "获得二等奖并安全变现退出，验证了活动规则套利的可行性。",
+                    "能力积累": "活动规则分析、成本收益计算、变现渠道开拓。"
                 }
             },
             project11: {
                 title: "币世界CNNS营销空投",
                 sections: {
-                    "项目背景": "2019年5月，币世界推出了CNNS代币。通过营销活动进行空投。",
-                    "参与方式": "参与营销活动。完成任务获得CNNS代币。",
-                    "核心收获": "获利8000元。理解了项目营销的策略。",
-                    "能力积累": "学会了如何识别和参与营销活动。理解了社区运营的重要性。"
+                    "项目背景": "币世界推出CNNS代币空投活动，用户完成下载注册、邀请好友等任务可获得代币奖励。",
+                    "参与方式": "(1)在大学校园内组建小团队，分工负责宣传物料制作、地推、注册指导等环节；(2)设计标准化的注册流程，提高单人操作效率；(3)利用学生群体对小额收益的敏感度快速扩展邀请网络。",
+                    "核心收获": "三天时间实现利润1万人民币，首次体验空投+地推的组合打法。",
+                    "能力积累": "团队组织、地推执行、流程标准化、用户增长策略。"
                 }
             },
             project12: {
                 title: "CC Global交易所BTH预售活动",
                 sections: {
-                    "项目背景": "CC Global是一个新兴交易所，推出了BTH代币预售活动。这是一个复杂的营销项目。",
-                    "参与方式": "深度参与CC Global的BTH预售活动。详细分析项目的各个方面。",
-                    "核心收获": "详细分析了私域运营、活动机制、营销策略、产品承接能力、用户转化率、致命隐患等多个维度。",
-                    "能力积累": "建立了对项目分析的深度认识。学会了如何识别项目的风险和机会。"
+                    "项目背景": "CC Global交易所联合BTH项目方推出代币9折预售活动，以空投形式向市场让利。用户可在特定时间参与代币抢购，单用户限购200美元，抢购后可立即出售套利。活动每日开放2000个名额，持续三个月，单日成本约4万美元，总预算约300万美元，活动总计为交易所带来10000+活跃交易用户。",
+                    "参与方式": "识别活动本质为\"确定性套利机会\"，9折买入即可卖出，单账号每次可获利约20美元。组织9个账号（含同学账号）参与抢购，每天前往网吧执行操作以规避IP风控，持续参与三个月，稳定获取套利收益。",
+                    "核心收获": "实际获利5000美元以上，在交易所出问题前安全退出。",
+                    "能力积累": "套利机会识别、多账号操作执行、交易所商业模式分析、营销活动ROI评估、私域运营观察、用户习惯培养机制理解、产品转化率分析、用户精细化运营思考、风险预警意识。",
+                    "深度分析": "一、私域运营亮点：交易所的私域运营做得非常出色，通过微信群裂变方式建立了100多个微信群，每个群接近500人满群状态，实际沉淀用户远超10000人。这种裂变方式带来了大量币圈新人，包括很多大爷大妈携带几万甚至几十万资金入场。交易所口号喊得不错，品牌宣传到位。\n\n二、活动机制亮点：活动的策划思路类似于2025年币安Alpha早期的玩法，核心在于通过每日限时抢购机制，让用户每天主动打开交易所、关注市场信息，随着时间推移逐步转化为长期用户。通过活动激励培养用户每天打开CC Global的习惯，本质上是在培养用户的交易习惯。虽然2026年交易所的拉新策略已经上升了一个维度，但\"让用户每天打开交易所并养成交易习惯\"在现在依然是一个不错的运营思路。\n\n三、营销策略评估：活动整体是成功的，成功为交易所带来了大量新用户，但存在明显优化空间。风控漏洞方面，同一用户可多账号反复参与，羊毛党获取了大量份额，改进方向是限制单用户参与次数、增加KYC风控、引入设备指纹识别。奖励分配方面，空投大量流向专业撸毛用户而非真实交易用户，改进方向是设置交易行为门槛，让奖励流向有转化潜力的用户。用户管理方面，口号喊得响，但缺乏对客户的精细化管理，改进方向是建立用户分层体系，针对不同用户群体制定运营策略。需求发掘方面，大量新用户入场，但未能有效挖掘其潜在需求，改进方向是通过数据分析识别用户偏好，提供个性化产品推荐。\n\n四、产品承接能力不足：活动带来了大量合约新用户，但转化率很低，核心产品缺失主要在于两个方面。第一是合约交易体验。平台采用成都链安的通用技术方案，与市面多家交易所界面雷同，当时很多交易所都是一个模子刻出来的，交易体验不够丝滑，无法留住专业合约用户，很多合约用户无法有效转化，浪费了市场拓客成本。第二是新币上线能力。用户手里有资金但缺乏投资标的，平台没有像当时如日中天的MEXC那样的新币发掘和快速上线能力，无法给沉淀的平台用户提供更多的产品选择，无法承接用户的交易需求。\n\n五、转化率测算：按保守估计，合约新用户月均贡献手续费最低100美元，沉淀用户数超过10000人，三个月手续费收入潜力为100×10000×3=300万美元，理论上可完全覆盖活动成本。但由于产品体验和承接能力不足、用户精细化运营缺失，实际转化率远低于预期，导致获客成本无法回收。\n\n六、致命隐患：QC稳定币机制：交易所未采用USDT作为基础代币，而是使用自发行的QC代币，不排除设计之初就有挪用用户资金的意图。活动期间QC与USDT汇率逐渐偏离，三个月后汇率差达到10%，社区发现问题后引发恐慌挤兑，最终交易所跑路。\n\n七、综合评价：CC Global在当时的小交易所中已属各方面策划做得不错的案例，私域裂变成功沉淀了大量用户，营销活动设计有吸引力，每日抢购机制有效培养用户习惯，品牌口号宣传到位。但最终失败原因是多重的：活动规则漏洞导致羊毛成本过高，产品技术落后（通用源码）无法留住用户，新币上线能力不足无法承接用户资金，缺乏对客户的精细化管理与潜在需求发掘，QC稳定币机制埋下跑路隐患。不论如何，前人的经验都是后人进步的养料。"
                 }
             },
             project13: {
                 title: "欧易OTC商家",
                 sections: {
-                    "项目背景": "2020年，欧易交易所推出了OTC商家计划。商家可以通过法币交易获得收益。",
-                    "参与方式": "成为欧易OTC商家。进行法币交易。",
-                    "核心收获": "日均收益500-1000元。建立了稳定的法币交易渠道。",
-                    "能力积累": "学会了如何建立稳定的收入来源。理解了法币交易的运作机制。"
+                    "项目背景": "2020年1月至2022年3月，在欧易交易所成为认证OTC商家，为用户提供USDT与人民币的兑换服务。根据美元汇率、市场行情、资金供需实时调整报价，利润一般是1%。",
+                    "参与方式": "成为欧易交易所认证OTC商家，进行USDT与人民币的场外交易。",
+                    "核心收获": "日均收益500-1000元。建立了稳定的法币交易渠道。实现零风险事件的安全退出。",
+                    "能力积累": "OTC商家运营、风控体系建立、法币交易渠道管理、反诈政策应对。",
+                    "风控体系": "(1)严格审核交易对手，拒绝可疑资金来源；(2)分散收款账户，降低单一账户风险；(3)建立交易流水记录体系，配合可能的合规调查；(4)密切关注反诈政策动态，及时调整经营策略。2022年国内反诈打击力度加大，出于安全考虑主动退出市场。"
                 }
             },
             project14: {
                 title: "Kucoin与抹茶MIR搬砖套利",
                 sections: {
-                    "项目背景": "2021年2月-3月，MIR代币在Kucoin和抹茶之间的价格差异巨大。",
-                    "参与方式": "使用杠杆进行对冲套利。通过借贷和交易的组合实现高效率的资金利用。",
-                    "核心收获": "获利3万美元。这是高级套利的代表作。",
-                    "能力积累": "学会了杠杆对冲的高级技巧。理解了资金效率的重要性。"
+                    "项目背景": "Mirror Protocol是Terra生态的合成资产协议，通过铸造合成资产（mAssets）锚定美股价格，当时已有苹果、特斯拉、推特、微软等股票代币被铸造，股票代币可在Uniswap和Terraswap上交易。MIR在Kucoin和抹茶之间存在持续价差，主要原因是抹茶市场深度较小、散户不常用Kucoin、抹茶做市商引进不够完善，形成了稳定的套利窗口。",
+                    "参与方式": "总资金约4545 USDT，按照两个交易所的角色进行不对称配置：Kucoin放置450 USDT（约10%）用于杠杆账户对冲，抹茶放置4095 USDT（约90%）作为主要买入资金池。抹茶的购买力维持在500币以上，每次几乎全仓买入后提币。后期熟悉操作后，在抹茶杠杆账户额外放置总资产25%的USDT用于借币操作，进一步提升资金效率。",
+                    "核心收获": "获利3万美元。套利机会持续近一个月，直到两个交易所价差收敛、套利空间消失。",
+                    "能力积累": "跨交易所套利执行、杠杆对冲策略、资金周转效率优化、成本精算、市场情绪判断（恐慌/FOMO）、挂单竞价技巧、多平台协同操作。",
+                    "详细操作": "成本控制：提币手续费为抹茶资金的千分之二，抹茶和Kucoin交易手续费共计千分之四，总成本约千分之六。Kucoin提币手续费为3个MIR。在5%左右的价差空间下，扣除千分之六的综合成本后仍有可观利润。\n\n操作策略：第一步是价格监控。打开电脑使用Aicoin查看OKEx的MIR成交历史作为行情参考（因为Kucoin电脑端页面颜色不太舒服），行情平稳时每隔5分钟查看一次抹茶即可，但要时刻对价格保持绝对敏感，市场上发生的任何动向都要一清二楚。第二步是挂单策略。Kucoin参考价格以确定能卖掉的价格乘以0.994作为成本价，在成本价以下需要不断竞价，保证自己的挂单排在第一位，这是为了赢得机会与时间。第三步是等待时机。在抹茶上，跌了才会有人卖（对应恐慌情绪），涨了才会有人买（对应FOMO情绪），行情是等出来的，耐心等待价差出现。第四步是执行套利。在抹茶低价买入MIR后提币到Kucoin高价卖出。如果抹茶卖单不多，同步在kucoin杠杆对冲，把买到的币在抹茶挂单卖掉，费率相同但要尽可能开高价，这个挂单主要是搏一个运气。\n\n进阶操作——杠杆对冲循环：熟悉基础操作后，引入杠杆机制提升资金周转效率。在抹茶杠杆账户借入MIR，同时在mexc高于市场价挂单卖出。如果mexc卖掉了，马上在Kucoin借入与抹茶币币账户同等金额的USDT买入MIR，接着把抹茶币币账户的USDT提现到Kucoin还掉借的USDT，然后把MIR提币到抹茶还掉杠杆借的MIR，此时抹茶杠杆账户的USDT就可以划转出来进行新一轮搬砖。如果mexc没卖掉多少就继续挂着卖，用Kucoin杠杆账户进行对冲即可，等待卖掉较大数量后再进行充提币操作，减少提币次数降低手续费损耗。"
                 }
             },
             project15: {
                 title: "MEXC与Uniswap GTC搬砖",
                 sections: {
-                    "项目背景": "2021年4月，GTC代币在MEXC中心化交易所和Uniswap DEX之间的价格差异很大。",
-                    "参与方式": "在MEXC和Uniswap之间进行GTC代币的套利。",
-                    "核心收获": "获利2万美元。体验了CEX和DEX之间的套利。",
-                    "能力积累": "学会了DEX交易的操作。理解了不同交易所的流动性差异。"
+                    "项目背景": "Gitcoin（GTC）上线初期，中心化交易所（MEXC）与去中心化交易所（Uniswap）之间存在显著价差，主要原因是流动性分布不均和用户群体差异。",
+                    "参与方式": "(1)实时监控MEXC和Uniswap的GTC价格；(2)发现价差后在低价平台买入；(3)通过以太坊网络转账到高价平台（需考虑Gas费用）；(4)卖出获利。",
+                    "核心收获": "获利5000美元，验证了CEX与DEX之间套利的可行性。",
+                    "能力积累": "CEX与DEX套利、跨平台转账、Gas费用优化、DeFi交互。"
                 }
             },
             project16: {
-                title: "AVAX链上与Kucoin QI搬砖",
+                title: "AVAX链上与Kucoin QI搬砖（规模化）",
                 sections: {
-                    "项目背景": "2021年9月，QI代币在AVAX链上的DEX和Kucoin之间的价格差异很大。",
-                    "参与方式": "使用多维度的价格监控工具。进行系统化的套利操作。",
-                    "核心收获": "获利3万美元。规模化操作的成功案例。",
-                    "能力积累": "学会了如何开发和使用自动化工具。理解了规模化运营的重要性。"
+                    "项目背景": "QI代币在AVAX链上的交易对是AVAX-QI（而非USDT-QI），导致AVAX价格波动会直接影响QI的链上价格，但交易所的USDT-QI价格反应较慢，形成套利空间。",
+                    "参与方式": "(1)AVAX网络转账速度快，5分钟内可完成充提；(2)可利用交易所杠杆借币对冲，进一步降低风险，预先在Kucoin借入QI进行对冲，锁定利润；(3)差价1%-3%，市场深度1-2万美元；(4)开发价格监控计算器，实时追踪三个价格维度；(5)优化客服工单提交流程，提高充提币效率。",
+                    "核心收获": "获利3万美元。",
+                    "能力积累": "多维度价格监控、工具开发、链上交易、杠杆对冲、规模化操作。",
+                    "技术要点": "需要同时监控AVAX价格、链上QI价格、交易所QI价格三个维度，快速判断套利窗口。"
                 }
             },
             project17: {
                 title: "Kucoin与TP钱包Xswap BLOK搬砖",
                 sections: {
-                    "项目背景": "2021年10月，BLOK代币在Kucoin和TP钱包内的Xswap DEX之间的价格差异很大。",
-                    "参与方式": "在钱包内DEX与交易所之间进行套利。",
-                    "核心收获": "获利1.5万美元。体验了钱包生态的机会。",
-                    "能力积累": "学会了如何使用钱包内的DEX。理解了DeFi生态的机会。"
+                    "项目背景": "BLOK代币在Kucoin交易所与TP钱包内置的Xswap之间存在价差，主要原因是Xswap用户群体较小、流动性较低，kucoin做市商做市策略不完善。",
+                    "参与方式": "(1)熟悉TP钱包的Xswap操作界面和滑点设置；(2)计算跨链转账成本和时间；(3)评估Xswap的流动性深度，避免大单滑点损失。",
+                    "核心收获": "获利2000美元。",
+                    "能力积累": "钱包内DEX交互、流动性评估、滑点控制。"
                 }
             },
             project18: {
                 title: "Terra链DEX与OKX Luna崩盘套利",
                 sections: {
-                    "项目背景": "2022年5月，Terra链的Luna代币崩盘。在极端行情中存在大量套利机会。",
-                    "参与方式": "在Terra链DEX和OKX之间进行Luna代币的套利。",
-                    "核心收获": "获利2万美元。在极端行情中捕捉机会。",
-                    "能力积累": "学会了如何在极端行情中保持理性。理解了风险管理的重要性。"
+                    "项目背景": "2022年5月，UST脱锚引发Luna进入死亡螺旋，价格从80美元暴跌至0.0001美元以下。在极端行情中，Terra链上DEX与中心化交易所OKX之间出现巨大价差。",
+                    "参与方式": "币安率先关闭充值，后知后觉的看到了市场上大量的套利党赚取了丰厚利润，我看到okx的价格明显高出市场100倍，虽然okx关闭了充币，但是我认为可以做一笔30美元的测试，于是通过链上购买30美元luna并通过同链其他币种获取到充值地址后进行充值测试。",
+                    "核心收获": "先用30美元在链上购买Luna进行测试，等待一天到账后发现存在百倍差价，实现3000美元收益，确认可行后迅速执行多次搬砖操作，一天内完成全部套利。最终获利1万美元。",
+                    "能力积累": "黑天鹅事件套利、极端行情反应、链上交互、执行力。",
+                    "深度认知": "这是一次经典的黑天鹅事件套利，体现了对极端行情的快速反应能力，也是执行力的一次成功实践，在币圈无论任何时候都不晚，永远不用担心没有机会。"
                 }
             },
             project19: {
                 title: "HODL项目Mod",
                 sections: {
-                    "项目背景": "2024年4月，HODL项目启动。需要建立和管理社区。",
-                    "参与方式": "担任项目Mod，管理3万人的Discord社区。策划用户激励活动。",
-                    "核心收获": "体验了项目从启动到爆发的全过程。学会了如何管理大型社区。",
-                    "能力积累": "建立了对社区运营的深度认识。学会了如何设计激励机制。"
+                    "项目背景": "HODL是由王大有发起的社区驱动型Meme项目，是Zoo of Meme生态的核心组成部分。Zoo of Meme的终极目标是打造一条公链，将公链GAS收益分配给$ZOME质押者，而HODL作为生态平台币承担着从0到1的关键使命。项目采用全部免费空投的形式将代币分发给市场，在经济模型和玩法趣味性上相比王大有之前的AIDOGE项目做了更优的设计。HODL代币总量中15%用于税收（后续递减至1%），整个生态包含HODL代币、\"法\"（CODE OF HODL NFT，总量21亿）、\"承诺\"（PROMISE代币）、Zoo of Meme NFT（总量2100个）、邦联代币等多层资产结构。",
+                    "参与方式": "担任社区志愿者Mod，负责3万人规模discord社区的日常管理和用户答疑。参与代币上线后的活动策划和营销推广，在价格下跌期间维护社区情绪，防止恐慌性抛售。",
+                    "核心收获": "完整经历了一个项目从启动、代币上线、价格波动、生态扩展的全过程，深刻理解项目在不同阶段的运营重点完全不同：早期重在建立共识和分发代币，中期重在生态扩展和用户留存，价格下跌期重在情绪管理和长期价值传递。",
+                    "能力积累": "社区运营与情绪管理、活动策划与执行、项目生命周期理解、多层资产结构设计理解、空投规则研究、用户增长策略、危机公关与沟通。",
+                    "详细工作": "活动策划方面，设计并执行多种用户激励活动提升社区活跃度。策划HODL积分大放送活动：用户在指定时间段（早8点至11:30）购买300U以上可获得30000积分奖励，累计购买1000U提升至40000积分，累计购买2000U提升至50000积分，设置积分上限和卖出限制（不超过购买量60%）防止套利。组织歌手大赛、深夜聊聊天、AMA发言、狼人杀、德州扑克大赛等线上活动，保持社区活跃度和用户粘性。\n\n支线任务运营方面，设计翻译任务、先交赞礼等任务体系，用户完成一阶任务可获得基础OAT，完成二阶任务获得多样OAT。组织积分任务：5.8-5.22买入HODL满足条件可获得积分，\"承诺\"恒LP15天不撤回可填表获得积分，拿到盒子即可获得绿色身份。\n\n社区维护方面，撰写项目进展公告保持信息透明，协调团队与社区之间的沟通，处理用户投诉和建议。在市场低迷、价格下跌时组织AMA、空投等活动稳定人心，向社区解释项目长期规划和价值逻辑。\n\n盒子体系运营方面，协助推广OG盒子（总量10000个，众筹奖励+捐款奖励，开5个及以上可获OAT）、BUILDER盒子（总量5000个）、HODL盒子（多种开盒方式：现开获35%代币+1倍挖矿积分，7天线性开获70%代币+5倍挖矿积分，10天线性开获100%代币+15倍挖矿积分）等NFT资产的发放和说明。\n\n市场安置活动：参与5.8日-5.12日的市安活动，引导用户使用大有BN返利链接，要求总交易额不低于2000U，协助大有拿到一年内列出来做社区活动的资源。\n\n全民空投规则研究：深度研究邦联全民空投的权重分配规则，理解其覆盖BSC用户、Meme用户、高质量链上用户、空投老手/新人、活跃DAO用户、模块化先锋Restaking用户、NFT持有者、Rug受害者等多维度的空投标准设计逻辑，学习如何通过精细化的空投规则筛选和激励真实用户。"
                 }
             },
             project20: {
                 title: "OKX钱包Soon交易竞赛",
                 sections: {
-                    "项目背景": "2025年5月，OKX钱包推出了Soon代币交易竞赛。",
-                    "参与方式": "参与交易竞赛。在新生态中快速适应和获利。",
-                    "核心收获": "获利5000美元。快速适应新生态的能力。",
-                    "能力积累": "学会了如何快速学习新平台。理解了新生态的机会。"
+                    "项目背景": "OKX钱包举办Soon代币交易竞赛，按交易量和邀请人数进行排名奖励。",
+                    "参与方式": "(1)批量创建钱包地址，在上海以每天220元的成本招募三个兼职工作10天；(2)设计资金归集和分发流程，优化Gas费用；(3)计算每个地址的最优交易量，平衡成本与奖励；(4)建立邀请关系网络，最大化邀请奖励。",
+                    "核心收获": "共操作约2万个地址，涉及大量的批量转账、交易执行、数据统计工作。最终获利1万美元。",
+                    "能力积累": "批量钱包创建、资金流管理、成本优化、邀请网络建立、大规模批量操作。",
+                    "深度认知": "验证了大规模批量操作的可行性和盈利模型，认识到了一个哪怕再卷，只要计算出优质的方案，依旧可以在市场上拿到优势，最终项目的人工成本不到手续费成本的一半，说明数据分析的重要性。"
                 }
             },
             project21: {
                 title: "代币创建与流动性实践",
                 sections: {
-                    "项目背景": "2024年6月-8月，学习如何创建和管理自己的代币。",
-                    "参与方式": "创建自己的代币。管理流动性池。体验代币经济学。",
-                    "核心收获": "深度理解了代币经济学和流动性池的运作机制。",
-                    "能力积累": "学会了如何创建代币。理解了DeFi的核心机制。"
+                    "项目背景": "通过亲手创建代币，深入理解DeFi的底层机制。",
+                    "参与方式": "(1)在bsc和sol部署代币合约；(2)在Uniswap、orca、meteora等DEX创建交易对，添加初始流动性；(3)测试不同价格区间的LP策略，观察无常损失；(4)模拟做市场景，理解AMM机制。",
+                    "核心收获": "(1)掌握代币部署的完整流程；(2)理解流动性池的工作原理和收益计算；(3)为后续参与交易竞赛中的自建池子策略打下基础。",
+                    "能力积累": "智能合约部署、DEX交互、流动性管理、AMM机制理解、无常损失计算。"
                 }
             },
             project22: {
                 title: "Rhea交易竞赛",
                 sections: {
-                    "项目背景": "2025年6月，Rhea平台举办交易竞赛。",
-                    "参与方式": "参与交易竞赛。在新平台中验证交易能力。",
-                    "核心收获": "获利3000美元。在新平台中的交易成功。",
-                    "能力积累": "学会了如何快速适应新交易平台。"
+                    "项目背景": "Rhea Finance在Near网络举办交易竞赛，按交易量发放门票，门票可兑换空投奖励。",
+                    "参与方式": "(1)门票按交易量阶梯发放（2美元=2张，4美元=4张...1024美元=20张）；(2)门票只统计最近15天，每周二可领取奖励；(3)需绑定推特，增加了多账号操作的难度。(4)计算不同交易量档位的成本收益比，确定最优刷量金额；(5)设计钱包隔离方案，每个地址对应一个账号避免推特风控；(6)在Near主网配置钱包，优化USDC转账路径，测试near不同网络的参与效率。",
+                    "核心收获": "获利1000美元。",
+                    "能力积累": "交易竞赛规则分析、成本收益精算、多账号管理、推特风控规避、Near网络交互。"
                 }
             },
             project23: {
                 title: "Pancake交易竞赛",
                 sections: {
-                    "项目背景": "2025年7月，Pancake交易所举办交易竞赛。",
-                    "参与方式": "参与交易竞赛。在DEX生态中的交易实践。",
-                    "核心收获": "获利2000美元。在DEX中的交易成功。",
-                    "能力积累": "学会了如何在DEX中进行交易。"
+                    "项目背景": "PancakeSwap举办交易竞赛活动，用户通过完成指定代币的交易量获取项目空投奖励。参与代币包括RWA、B2、CUDIS、ROAM、IDOL等多个项目，每个项目有不同的交易量门槛和磨损成本。",
+                    "参与方式": "成本测算：在参与前对每个项目进行了详细的磨损成本测算：RWA以200美元本金刷51次，磨损6.63美元；B2以500美元本金刷21次，磨损12.6美元；CUDIS以200美元本金刷51次，磨损10.2美元；ROAM以1000美元本金刷10次，磨损2美元；IDOL以200美元本金刷51次，磨损7.65美元。根据测算结果，确定每个项目总投入100美元手续费的预算，能刷多少账号就刷多少。\n\n操作策略：第一是路由设置。在PancakeSwap上设置只使用V2/V3路由，确保交易路径最优、滑点可控。第二是风控规避。活动规则明确禁止自我交易，因此采用\"单账号只买不卖\"的策略，买入后转到其他地址通过OKX卖出，确保每个卖出地址都不一样，避免触发风控。第三是账号管理。总共使用9个钱包，每个钱包下设5个账户，总计45个账户参与活动。第四是策略简化。经过实践发现，复杂的刷法效率不高，最终采用直接在PancakeSwap买卖的简单策略，参考币安Alpha刷量的官方默认玩法，快速完成交易量目标。",
+                    "核心收获": "获利1000美元。",
+                    "能力积累": "交易竞赛规则分析、磨损成本精算、多账号批量管理、风控规避策略、DEX路由优化。",
+                    "核心认知": "对于这类活动的本质有清醒认识：如果项目方真的要发放奖励，只要满足活动要求都会给；但如果项目方想查，链上数据公开透明，各种理由都可以找出来不给。因此策略核心是在满足活动规则的前提下尽可能降低成本、分散风险，不把预期收益看得太重。"
                 }
             },
             project24: {
                 title: "River NFT空投",
                 sections: {
-                    "项目背景": "River是一个多链部署的稳定币项目。通过在不同链上质押btc等稳定资产铸造稳定币来获得NFT并空投积分。积分后续可兑换代币。",
-                    "参与方式": "在5条链上部署操作。管理400个钱包地址。进行大规模的空投操作。",
-                    "核心收获": "获利5000美元。展现了多链操作的能力。",
-                    "能力积累": "学会了多链部署和批量运营。理解了稳定币项目的机制。"
+                    "项目背景": "River是一个多链部署的稳定币项目，通过在不同链上质押btc等稳定资产铸造稳定币来获得NFT并空投积分，积分后续可兑换代币。",
+                    "参与方式": "（1）在BSC、ARB、Sonic、Hemi、BOB等5条链上部署批量铸造任务（2）建立400个钱包地址，研究跨链转账策略与资金归集方案（3）分析不同链的Gas费用与稳定币铸造成本，优化资金分配效率（4）研究积分与代币的经济模型，在一定时期内项目方用币价托底积分价格，后期用积分价格作用于币价，由于积分量过大不劳而获的人过多，积分兑换代币不可持续，后续果然项目方关闭了积分和代币的兑换。",
+                    "核心收获": "成功铸造400个地址的NFT，积累多链批量操作与代币经济模型分析经验。获利5000美元。",
+                    "能力积累": "多链批量操作经验、经济模型分析、积分与币价关系研究、周期判断、黑天鹅因素识别。"
                 }
             },
             project25: {
                 title: "XLayer Meme热潮 & Okay交易平台打新",
                 sections: {
-                    "项目背景": "2025年8月-9月，XLayer Meme热潮开始。Okay交易平台推出打新活动。",
-                    "参与方式": "参与XLayer Meme热潮。在Okay平台参与打新。",
-                    "核心收获": "获利8000美元。抓住了爆发期的机会。",
-                    "能力积累": "学会了如何识别和参与热潮。理解了打新的机制。"
+                    "项目背景": "XLayer链上爆发Meme热潮，徐乐（OKX相关）推出Okay交易平台，平台币ODOG上线初期存在打新机会。",
+                    "参与方式": "（1）在Meme热潮中快速识别机会，判断Okay平台作为OKX生态项目具有较高确定性（2）研究并使用MoreLogin指纹浏览器进行多账号管理，规避平台风控（3）批量账号参与ODOG打新，制定分批建仓与出货策略（4）分析ODOG飞轮机制与压力位（0.0024/0.0027），制定波段操作策略。",
+                    "核心收获": "实现2000美元收益。",
+                    "能力积累": "机会捕捉能力、工具运用能力（MoreLogin）、风险评估能力、波段操作策略。"
                 }
             },
             project26: {
                 title: "OKX Boost xlaunch",
                 sections: {
-                    "项目背景": "2025年10月，OKX推出了Boost xlaunch项目。",
-                    "参与方式": "参与xlaunch。通过谈判获得40%的返佣。复杂规则拆解与执行。",
-                    "核心收获": "获利5000美元。通过谈判获得更高的返佣。",
-                    "能力积累": "学会了如何谈判和优化收益。理解了项目的复杂规则。"
+                    "项目背景": "OKX推出Boost活动，结合交易竞赛机制，用户通过满足余额门槛（200美元）和交易量门槛（256美元）获取新发售项目的代币奖励。本质是用亏损的手续费换取项目空投份额。",
+                    "参与方式": "（1）详细研究活动规则，拆解奖励计算公式，明确余额和交易量的双重门槛要求（2）计算手续费投入与预期奖励的比值，评估单账号参与的ROI（3）争取到40%的钱包专属返佣，有效降低手续费成本（4）批量操作40-60个钱包，设计资金分配与交易执行流程（5）评估市场波动对策略的影响，选择低波动时段执行交易，控制滑点损失。",
+                    "核心收获": "XPL代币获利5000美元。",
+                    "能力积累": "活动规则逆向能力、成本优化能力、返佣谈判、批量钱包管理、风险控制。"
                 }
             },
             project27: {
                 title: "Binance Alpha项目研究",
                 sections: {
-                    "项目背景": "2025年11月，深度研究Binance Alpha项目。",
-                    "参与方式": "研究Binance Alpha的项目选择标准。理解主流交易所的项目评估方法。",
-                    "核心收获": "建立了对主流交易所项目选择的认识。",
-                    "能力积累": "学会了如何评估项目质量。理解了交易所的项目选择逻辑。"
+                    "项目背景": "系统跟踪Binance Alpha上线的项目，包括h、gaib、eden、ff、xan、hana、xpl、gain、aop、zeus、linea、avnt、zent、mlk、rhea、rcade、sahara、la、bdxn、xter、nxpc、soon、roam、asp、CDL、SkyAI等，进行深度分析和参与策略制定。",
+                    "参与方式": "分析方法：(1)对比历史项目数据，建立估值模型；(2)分析经济模型、筹码分布、流动性添加方式；(3)计算不同开盘价格下的收益空间；(4)制定做市策略（如区间池子设置高税实现链上自动化做市）。",
+                    "核心收获": "形成一套完整的Alpha项目分析框架，能够快速评估新项目的参与价值和最优策略。",
+                    "能力积累": "项目估值模型、经济模型分析、筹码分布研究、流动性策略、做市机制理解。"
                 }
             }
         };
 
         function openModal(projectId) {
-            const modal = document.getElementById('projectModal');
             const project = projectsData[projectId];
-            
-            document.getElementById('modalTitle').textContent = project.title;
-            
-            let bodyHTML = '';
+            if (!project) return;
+
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+
+            modalTitle.textContent = project.title;
+
+            let contentHTML = '';
             for (const [sectionTitle, sectionContent] of Object.entries(project.sections)) {
-                bodyHTML += `
+                contentHTML += `
                     <div class="modal-section">
                         <div class="modal-section-title">${sectionTitle}</div>
                         <div class="modal-section-content">${sectionContent}</div>
                     </div>
                 `;
             }
-            
-            document.getElementById('modalBody').innerHTML = bodyHTML;
-            modal.style.display = 'block';
+
+            modalContent.innerHTML = contentHTML;
+            document.getElementById('projectModal').style.display = 'block';
         }
 
         function closeModal() {
@@ -900,7 +843,7 @@
 
         window.onclick = function(event) {
             const modal = document.getElementById('projectModal');
-            if (event.target == modal) {
+            if (event.target === modal) {
                 modal.style.display = 'none';
             }
         }
